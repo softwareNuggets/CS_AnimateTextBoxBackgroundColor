@@ -1,0 +1,57 @@
+﻿<Window x:Class="AnimateBackgroundColor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimateBackgroundColor"
+        mc:Ignorable="d"
+        Title="Animate Background Color" Height="720" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="4"></RowDefinition>
+            <RowDefinition Height="672"></RowDefinition>
+            <RowDefinition Height="4"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="DarkGray">
+
+            <StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Left">
+
+                <Button x:Name="BtnCopySqlSource" Content="Copy to Clipboard" 
+				    HorizontalAlignment="Left" Height="43" Margin="4,0,0,0" 
+				    VerticalAlignment="Top" Width="160" Click="BtnCopyToClipboard_Click"/>
+
+                <Label MouseDown="SmallFontMouseDown" Content="A" 
+                       FontSize="20" Margin="10,0,0,0"></Label>
+
+                <Label MouseDown="BigFontMouseDown" Content="A" 
+                       FontSize="26" Margin="2,-4,0,0"></Label>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Right">
+
+                <Button x:Name="BtnClear" Content="Clear" 
+					Width="60" Margin="0,0,4,0"
+                    Click="BtnClear_Click"></Button>
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2"  HorizontalAlignment="Stretch" 
+			                VerticalAlignment="Top">
+            <TextBox 
+                     x:Name="SourceText"
+                     FontFamily="Consolas" FontSize="16"
+                     HorizontalAlignment="Stretch"  
+                     VerticalAlignment="Stretch" Margin="4"
+                     TextWrapping="Wrap" Height="630"
+                     AcceptsReturn="True" AcceptsTab="True">
+            </TextBox>
+            
+        </Grid>
+    </Grid>
+</Window>
